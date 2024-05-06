@@ -21,6 +21,26 @@
     })
  }
 
- inserir("Eduardo1","1234","eduardo1@gmail.com")
+ //selecionar dados por id - select nometabela
+ function selecionaPorId(id){
+   let sql = "select * from users where id = ?"
+   connection.query(sql, id, function(error, results, fields){
+      for(let i=0;1<results.length;i++){
+         if(error) throw error
+         console.log("Selecionado:" + results[i].id + ":" + results [i].login + resu[i].email)
+      }
+   })
+ }
+
+ function selecionarTudo(){
+   connection.query(sql, id, function(error, results, fields){
+      for(let i=0;1<results.length;i++){
+         if(error) throw error
+         console.log("Selecionado:" + results[i].id + ":" + results [i].login + resu[i].email)
+      }
+   })
+ }
+ 
+selecionarTudo()
 
  connection.end()
